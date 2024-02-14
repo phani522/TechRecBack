@@ -1,4 +1,7 @@
-h2{
+:host {
+    display: block; /* Ensure the component takes the full width */
+  }
+  h2{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: rgb(27, 89, 143);
     color: rgb(234, 146, 113);

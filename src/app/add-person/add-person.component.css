@@ -1,0 +1,44 @@
+/* .add{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    size: 30% 30%;
+    height: 100vh;
+   
+} */
+
+
+.add {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  input.mat-input {
+    width: 100%;
+  }
+  
+  p {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .button-class {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-class:hover {
+    background-color: #45a049;
+  }
+  
