@@ -43,8 +43,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     FormsModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatTableDataSource,
-    MatTableModule
+    MatTableModule,
+    MatTableDataSource
   ],
   providers: [
     provideClientHydration(),

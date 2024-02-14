@@ -8,7 +8,8 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrl: './view.component.css'
+  styleUrl: './view.component.css',
+  
 })
 export class ViewComponent implements OnInit{
   constructor(private service:AdminService, private router:Router){
@@ -26,7 +27,7 @@ export class ViewComponent implements OnInit{
   candidates:CandidateFullInfo[]=[];
   
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['id', 'fname', 'lname', 'phone'];
   dataSource = new MatTableDataSource(this.recruiters);
 
   applyFilter(event: Event) {
