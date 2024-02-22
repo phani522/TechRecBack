@@ -5,6 +5,7 @@
 <!-- <a routerLink="/login" routerLinkActive="active">Login</a> -->
 <!-- 
 <app-login (loginEvent)="checkLogin($event)"></app-login> -->
+<!-- 
 <header>
   <h2> Solutions</h2>
 </header>
@@ -15,10 +16,44 @@
   </nav>
   <router-outlet></router-outlet>
 </div>
-<ng-template #login>
-  <app-login (loginEvent)="checkLogin($event)"></app-login>
-</ng-template>
-<!-- <div>
 
-  <router-outlet></router-outlet>
+
+<ng-template #login>
+  <app-login (loginEvent)="checkLogin($event)" (loginRecruiterEvent)="checkLoginRecruiter($event)"></app-login>
+</ng-template>
+
+<div *ngIf="checkRecruiter; else login">
+  <nav>
+  <a routerLink="/edit" routerLinkActive="active">Edit Profile</a>
+  <a routerLink="/submission" routerLinkActive="active">Submission</a>
+</nav>
+<router-outlet></router-outlet>
 </div> -->
+
+<header>
+  <h2> Solutions</h2>
+</header>
+
+<!-- Check for admin login -->
+<div *ngIf="check; else adminNav">
+  <nav>
+    <a routerLink="/add" routerLinkActive="active">Add</a>
+    <a routerLink="/view" routerLinkActive="active">View</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #adminNav>
+  <!-- Check for recruiter login -->
+  <div *ngIf="checkRecruiter; else login">
+    <nav>
+      <a routerLink="/edit" routerLinkActive="active">Edit Profile</a>
+      <a routerLink="/submission" routerLinkActive="active">Submission</a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
+
+<ng-template #login>
+  <app-login (loginEvent)="checkLogin($event)" (loginRecruiterEvent)="checkLoginRecruiter($event)"></app-login>
+</ng-template>

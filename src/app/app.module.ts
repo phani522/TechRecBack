@@ -20,6 +20,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminService } from './Service/admin.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AssignCandidatesDialogComponent } from './assign-candidates-dialog/assign-candidates-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
+import { SubmissionComponent } from './submission/submission.component';
+import { ViewsubmissionComponent } from './viewsubmission/viewsubmission.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -28,7 +39,11 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     LoginComponent,
     AddPersonComponent,
     DisplayComponent,
-    ViewComponent
+    ViewComponent,
+    AssignCandidatesDialogComponent,
+    EditComponent,
+    SubmissionComponent,
+    ViewsubmissionComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +59,14 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     MatSnackBarModule,
     HttpClientModule,
     MatTableModule,
+    MatExpansionModule,
+    MatTabsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginator,
     MatTableDataSource
+    //MatTableDataSource
   ],
   providers: [
     provideClientHydration(),

@@ -1,0 +1,37 @@
+<!-- submission.component.html -->
+<form #submissionForm="ngForm" (ngSubmit)="onSubmit(submissionForm)">
+    <div>
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" [(ngModel)]="givenCompany" required>
+      <!-- Display an error message if the field is not valid -->
+      <div *ngIf="submissionForm.controls['companyName'].touched && submissionForm.controls['companyName'].hasError('required')">
+        Company Name is required.
+      </div>
+    </div>
+
+    <div>
+        <label for="companyName">Role:</label>
+        <input type="text" id="role" name="role" [(ngModel)]="givenRole" required>
+        <div *ngIf="submissionForm.controls['role'].touched && submissionForm.controls['role'].hasError('required')">
+          Role is required.
+        </div>
+      </div>
+  
+    <div>
+      <label for="selectedCandidate">Select Candidate:</label>
+      <select id="selectedCandidate" name="selectedCandidate" [(ngModel)]="selectedCandidateId" required>
+        <option *ngFor="let candidate of candidates" [value]="candidate.id">
+          {{ candidate.fname }}
+        </option>
+      </select>
+      <!-- Display an error message if the field is not valid -->
+      <div *ngIf="submissionForm.controls['selectedCandidate'].touched && submissionForm.controls['selectedCandidate'].hasError('required')">
+        Please select a candidate.
+      </div>
+    </div>
+  
+    <div>
+      <button type="submit" [disabled]="!submissionForm.valid">Submit</button>
+    </div>
+  </form>
+  

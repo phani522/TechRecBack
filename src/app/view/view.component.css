@@ -1,3 +1,86 @@
-.mat-sort-header-container {
+/* Add your global styles here */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .AllTabs {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mat-tab-group {
+    width: 80%;
+  }
+  
+  .mat-expansion-panel {
+    width: 100%;
+    max-width: 1420px; /* Adjust the maximum width as needed */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .mat-expansion-panel:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mat-expansion-panel-header {
+    background-color: #8badc8; /* Header background color */
+    color: white;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
+  
+  .mat-expansion-panel-header:hover {
+    cursor: pointer;
+  }
+  
+  .mat-panel-title,
+  .mat-panel-description {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+
+
+.mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.mat-header-cell,
+.mat-cell {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.mat-header-row,
+.mat-row {
+    background-color: #f5f5f5;
+}
+
+.delete-button{
+    background-color: rgb(246, 68, 68);
+
+}

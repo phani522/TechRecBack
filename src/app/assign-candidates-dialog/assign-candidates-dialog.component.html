@@ -1,0 +1,14 @@
+<!-- assign-candidates-dialog.component.html -->
+
+<h2>Select Candidate to Assign</h2>
+<form (ngSubmit)="assignCandidate()">
+  <mat-form-field>
+    <mat-label>Select Candidate</mat-label>
+    <mat-select [(ngModel)]="selectedCandidate" name="selectedCandidate">
+      <mat-option *ngFor="let candidate of data.candidates" [value]="candidate">
+        {{ candidate.fname }} {{ candidate.lname }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Assign Selected Candidate</button>
+</form>

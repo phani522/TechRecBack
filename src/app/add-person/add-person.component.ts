@@ -18,7 +18,7 @@ ngOnInit(): void {
   //this.form.controls['type'].setValidators([Validators.required]);
 }
   recruiter:Recruiter={id:'',fname:'',lname:'',phone:''};
-  candidate:Candidate={fname:'',lname:'',phone:'',tech:''};
+  candidate:Candidate={id:'',fname:'',lname:'',phone:'',tech:''};
   selected:string='candidate';
   add(form:NgForm){
   if(form.valid){
@@ -36,6 +36,7 @@ ngOnInit(): void {
       this.candidate.lname=form.value.lname;
       this.candidate.phone=form.value.phone;
       this.candidate.tech=form.value.tech;
+      this.candidate.id=this.generateUsername(form.value.lname, form.value.phone);
       this.service.addCandidate(this.candidate).subscribe(
         data=>console.log(data)
       );
@@ -46,8 +47,6 @@ ngOnInit(): void {
   }
   else{
     this.openSnackBar('Please fill in all required fields');
-     
-
   }
 
   }
