@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminService, Candidate, CandidateFullInfo, Recruiter, RecruiterFullInfo } from '../Service/admin.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AssignCandidatesDialogComponent } from '../assign-candidates-dialog/assign-candidates-dialog.component';
 import { error } from 'console';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {ViewsubmissionComponent} from '../viewsubmission/viewsubmission.component';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class ViewComponent implements OnInit{
   candidates:CandidateFullInfo[]=[];
   
 
+  //@ViewChild('ViewsubmissionComponent') viewsub!: ViewsubmissionComponent;
   //displayedColumns: any= ['id','fname', 'lname', 'phone'];
   dataSource:Recruiter[]=[];
 
@@ -69,6 +71,12 @@ recruiterColumns:string[]=['fname','lname','phone','id','Delete'];
   }
 
 
+  tabChanged(tab:number){
+
+    // if(tab ===2){
+    //   this.viewsub.getAllSubmissions();
+    // }
+  }
   openAssignCandidatesDialog(id:string): void {
     
 

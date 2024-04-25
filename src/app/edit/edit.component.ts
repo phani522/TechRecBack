@@ -15,7 +15,8 @@ export class EditComponent implements OnInit {
   recId:string='';
   recruiter!:RecruiterFullInfo;
   candidates:Candidate[]=[];
-  
+
+  candidateColumns:string[]=['fname','lname','phone'];
   ngOnInit(): void {
       this.recruiterService.loggedInRecruiter$.subscribe(
         (recruiterId)=>this.recId=recruiterId as string
@@ -30,5 +31,6 @@ export class EditComponent implements OnInit {
         }
       );
   }
+
 
 }

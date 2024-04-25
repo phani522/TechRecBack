@@ -30,56 +30,29 @@
           </li>
         </ul>
       </div> 
-      <!-- <div class="rec-filter">
-        <h3>Recruiters</h3>
-        <mat-form-field>
-          <mat-select placeholder="Select Recruiters" [(ngModel)]="selectedRecruiters" multiple>
-            <mat-option *ngFor="let recruiter of recruiters" [value]="recruiter">
-              {{ recruiter.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
     
-      <div class="cand-filter">
-        <h3>Candidates</h3>
-        <mat-form-field>
-          <mat-select placeholder="Select Candidates" [(ngModel)]="selectedCandidates" multiple>
-            <mat-option *ngFor="let candidate of candidates" [value]="candidate">
-              {{ candidate.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div> -->
-
-
-  
     <button (click)="filterSubmissions()">Apply Filter</button>
 </div>
   
 
 <div class="table-data">
-    <table mat-table [dataSource]="submissions">
+    <table mat-table [dataSource]="dataSource">
 
-        <!-- Position Column -->
         <ng-container matColumnDef="company">
           <th mat-header-cell *matHeaderCellDef> Company </th>
           <td mat-cell *matCellDef="let element"> {{element.company}} </td>
         </ng-container>
     
-        <!-- Name Column -->
         <ng-container matColumnDef="role">
           <th mat-header-cell *matHeaderCellDef> Role </th>
           <td mat-cell *matCellDef="let element"> {{element.role}} </td>
         </ng-container>
     
-        <!-- Weight Column -->
         <ng-container matColumnDef="recId">
           <th mat-header-cell *matHeaderCellDef> Recruiter </th>
           <td mat-cell *matCellDef="let element"> {{element.recId}} </td>
         </ng-container>
     
-        <!-- Symbol Column -->
         <ng-container matColumnDef="candId">
           <th mat-header-cell *matHeaderCellDef> Candidate </th>
           <td mat-cell *matCellDef="let element"> {{element.candId}} </td>
@@ -92,6 +65,8 @@
     
         <tr mat-header-row *matHeaderRowDef="submissionColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: submissionColumns;"></tr>
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+
+       
       </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
 </div>

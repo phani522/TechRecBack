@@ -17,7 +17,10 @@ constructor(private service: AdminService){
 ngOnInit(): void {
     this.getAllSubmissions();
 }
-dataSource = new MatTableDataSource<Submission>();
+// dataSource = new MatTableDataSource<Submission>();
+// @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+dataSource= new MatTableDataSource<Submission>();
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 submissionColumns:any=['company','role','recId','candId','timestamp']
@@ -40,9 +43,11 @@ getAllSubmissions(){
         if(!this.candidates.some((candidate)=>candidate.name === sub.candId))
         this.candidates.push({name:sub.candId,selected:false});
       }
-      this.dataSource.data = this.submissions;
-        this.dataSource.paginator = this.paginator;
+      // this.dataSource.data = this.submissions;
+      //   this.dataSource.paginator = this.paginator;
       //console.log('recruiters are '+this.recruiters);
+      this.dataSource.data = this.submissions;
+      this.dataSource.paginator=this.paginator;
     }
   );
 }

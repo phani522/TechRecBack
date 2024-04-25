@@ -1,5 +1,5 @@
 
-<mat-tab-group class="AllTabs">
+<mat-tab-group class="AllTabs" (selectedIndexChange)="tabChanged($event)">
     <mat-tab label="Recruiters">
 <div class="ViewRecruiters">
     <div *ngFor="let recruiter of recruiters">
